@@ -1,0 +1,146 @@
+1. Node is not a Language.
+2. This is a Server Environment.
+3. Node js can connect with database, JS cannot.
+4. Node js is a server side language, JS is a client side language(run on browser).
+4,1. Code and syntax is very similar to JavaScript. But not exactly the same.
+5. Node js free,open-source.
+6. Node js use Chrome V8 Engine to execute code.
+
+7. Node js mostly used for API (90% of usecase)
+8. So we can connect the same database with Web App, Mobile App.
+9. Node is easy to understand who know Javascript.
+10. Node is super-fast for APIs
+11. With Node and JavaScript, you can become full Stack Developer.
+
+
+
+Clint(Request) - Server(Response)
+html,css,js - nodejs
+
+
+
+NPM - node package manager
+to download different external packages through node.
+comes with node js installation.
+node -v,  npm -v to check version in terminal
+
+
+
+console library in node is used for debugging
+it is not same as browser console.
+
+
+
+Core Module
+- file system(fs)
+- http
+- path
+- process
+- url
+- buffer
+- crypto
+- dns
+- events
+- console
+2 types - Global & Non-Global core modules
+console is a global cmodl
+fs is non-global cmodl
+non-global modules need to be imported global need not.
+
+
+
+Create Server
+using http module to create server
+
+
+
+package.json (never delete this file)
+keep code related details of project
+name, version, description, author, license, dependencies, scripts, main, keywords, repository,
+keywords - keywords for project
+repository - repository url of project
+dependencies - list of packages used in project
+scripts - scripts to be run in project
+main - main file of project
+
+npm init to initialize package.json
+npm i (package_name) to install package
+npm uninstall (package_name) to uninstall package
+1. after installing package it will be in node_modules and
+dependencies will be in package.json with version of package
+2. if we give this to other person just run npm i
+
+package-lock.json (can delete this file)
+keeps the details of exact version of packages used in project
+
+node_modules is a directory where all packages are stored
+it is not a good practice to push this to repository
+therefore it is add in gitignore
+if this folder gets deleted then we can install packages again using npm i
+details of these packages are in package.json
+
+
+
+Nodemon
+It saves and runs automatically, saves time runs continuously
+install nodemon using npm i nodemon
+npm i nodemon -g to install globally
+
+
+Getting input from command line
+PROCESS MODULE in nodejs is an object
+process.argv is an array of command line arguments
+argv(arguments vector)
+
+console.log(process)
+node ./index.js hello
+[ 'node', './index.js', 'hello' ]
+argv[0] is path of node executable 
+argv[1] is path of script
+so hello is argv[2] now
+console.log(process.argv[2])
+
+PATH MODULE in nodejs
+path module used to join current directory with given folder
+__dirPath gives current path
+path.join(__dirname, 'files')
+below creating multiple helloi.txt files
+dirPath+`/hello${i}.txt`, `This is ${i}th file.`
+
+
+Nodejs is async, single threaded language
+handled using promise or async/await
+new Promise((resolve, reject))
+
+Event Loop
+Call-Stack--->Node-API, Callback-Queue
+setTimeout is a func from C,C++ library which runs in Node-API as it is not Javascript code
+so both setTimeout is sent in Node-API memory from there it checks which should execute first
+as 2 setTimeout is 0 sec so it will send to callback-Queue memorey
+So until call-stack is empty , event loop will not go to callback-queue
+FROM call-stack memory WHERE MAIN WAS RUNNING AFTER MAIN IS FULLY EXECUTED AND REMOVED FORM call-stack
+call-back-Queue CODE WILL BE SENT TO call-stack
+
+
+Express js
+install express using npm i express
+.get method is used to get data from server
+
+
+EJS Template package (Embedded JavaScript Template)
+Template Engine
+folder named views required
+1. app.set('view engine', 'ejs')
+2. render
+
+
+Middleware
+Application-level middleware    (Applys middleware on entire application)
+Router-level middleware         (Applys middleware on specific Router not all)
+Error-handling middleware
+Built-in middleware
+Third-party middleware
+
+
+
+
